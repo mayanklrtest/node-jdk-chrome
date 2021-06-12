@@ -8,7 +8,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
 
 # Google Chrome
 
-ARG CHROME_VERSION=89.0.4389.90-1
+ARG CHROME_VERSION=91.0.4472.101-1
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
 	&& echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
 	&& apt-get update -qqy \
@@ -19,7 +19,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 
 # ChromeDriver
 
-ARG CHROME_DRIVER_VERSION=89.0.4389.23
+ARG CHROME_DRIVER_VERSION=91.0.4472.19
 RUN wget -q -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
 	&& unzip /tmp/chromedriver.zip -d /opt \
 	&& rm /tmp/chromedriver.zip \
